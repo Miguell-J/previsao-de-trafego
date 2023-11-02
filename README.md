@@ -10,7 +10,6 @@ Certifique-se de ter as seguintes bibliotecas Python instaladas antes de executa
 
 - pandas
 - scikit-learn
-- tensorflow
 - pygwalker
 - matplotlib
 
