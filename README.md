@@ -1,5 +1,7 @@
 # Modelo de previsão de Tráfego com Decision Tree
 
+<img src="https://i.ebayimg.com/00/s/OTAwWDE2MDA=/z/nvMAAOSwoTtdVPP9/$_45.jpg"/>
+
 Este é um repositório que contém um modelo de classificação de tráfego rodoviário usando uma árvore de decisão. O modelo é criado com base em dados de tráfego e usa a biblioteca Python `pygwalker` para auxiliar na preparação dos dados. Além disso, ele inclui visualizações para avaliar as previsões do modelo.
 
 ## Pré-requisitos
@@ -33,9 +35,10 @@ import matplotlib.pyplot as plt
 
 - Carregue os dados de tráfego de um arquivo CSV:
 ```python
-Copy code
 trafego = pd.read_csv("Traffic.csv")
 ```
+
+<img src="trafego_table.png"/>
 
 - Faça a preparação dos dados, incluindo a substituição de categorias por valores numéricos e a criação de variáveis dummy:
 
@@ -52,6 +55,8 @@ trafego = pd.get_dummies(trafego)
 ```python
 pg.walk(trafego)
 ```
+
+<img src="eda-trafeg.png"/>
 
 - Separe os dados em conjuntos de treinamento e teste:
 
@@ -84,6 +89,7 @@ pred = clf.predict(X_test)
 from sklearn.metrics import accuracy_score
 acc = accuracy_score(y_test, pred)
 print("A precisão do modelo é de: {:.2%}".format(acc))
+>>> "A precisão do modelo é de: 98.49%"
 ```
 
 - Visualize as previsões comparadas com os valores reais:
@@ -98,6 +104,8 @@ plt.title("Comparação entre Valores Reais e Previsões")
 plt.legend()
 plt.show()
 ```
+
+<img src="grafico_trafego.png"/>
 
 ## Contribuindo
 Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novos recursos para este repositório. Basta fazer um fork do projeto, criar uma branch para suas alterações e enviar um pull request.
